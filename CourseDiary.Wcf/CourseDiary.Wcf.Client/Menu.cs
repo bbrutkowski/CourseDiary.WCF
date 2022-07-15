@@ -1,5 +1,4 @@
-﻿using CourseDiary.Wcf.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace CourseDiary.Wcf.Client
@@ -36,6 +35,5 @@ namespace CourseDiary.Wcf.Client
                 Console.WriteLine($"#{command.Key}: {command.Value.Name} - {command.Value.Description}");
             }
         }
-
     }
 }

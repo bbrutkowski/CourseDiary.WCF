@@ -1,14 +1,13 @@
-﻿using CourseDiary.Wcf.Models;
+﻿using CourseDiary.Wcf.ServiceDefinitions.Models;
 using System.ServiceModel;
 
-namespace CourseDiary.Wcf.Interfaces
+namespace CourseDiary.Wcf.ServiceDefinitions.Interfaces
 {
     [ServiceContract]
-    public interface IUserManagmentClient
+    public interface IUserManagmentService
     {
         [OperationContract]
         bool CheckUserCredentials(string userLogin, string userPassword);
-
         [OperationContract]
         User GetUser(string userLogin);
     }

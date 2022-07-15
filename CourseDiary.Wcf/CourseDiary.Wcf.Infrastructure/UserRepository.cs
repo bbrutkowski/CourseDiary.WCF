@@ -7,8 +7,6 @@ using System.Data.SqlClient;
 
 namespace CourseDiary.Wcf.Infrastructure
 {
-   
-
     public class UserRepository : IUserRepository
     {
         private string _connectionString = ConfigurationManager.ConnectionStrings["CourseDiaryDBConnectionString"].ConnectionString;
