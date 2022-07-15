@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseDiary.Wcf.Infrastructure", "CourseDiary.Wcf.Infrastructure\CourseDiary.Wcf.Infrastructure.csproj", "{96BE0BAF-FD87-4825-97F3-41B39DED0F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseDiary.Wcf.Domain", "CourseDiary.Wcf.Domain\CourseDiary.Wcf.Domain.csproj", "{4E689706-45B7-495E-BF4A-A3AC8BEE69DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{4471808B-4451-41CA-B909-C81B6B120809}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admin", "Admin", "{229D55E0-24FB-4665-9E95-2832BF9D7117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseDiary.Wcf.ServiceDefinitions2", "CourseDiary.Wcf\CourseDiary.Wcf.ServiceDefinitions2.csproj", "{D8467612-457E-4AE3-A671-6DF2E5CC81D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseDiary.Wcf.SelfhostServer", "CourseDiary.Wcf.SelfhostServer\CourseDiary.Wcf.SelfhostServer.csproj", "{E7306090-C350-45FF-B855-EDC2C38E6835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseDiary.Wcf.Client", "CourseDiary.Wcf.Client\CourseDiary.Wcf.Client.csproj", "{3AFEB838-C6CF-4A05-85B4-49206A1C0811}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96BE0BAF-FD87-4825-97F3-41B39DED0F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BE0BAF-FD87-4825-97F3-41B39DED0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BE0BAF-FD87-4825-97F3-41B39DED0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BE0BAF-FD87-4825-97F3-41B39DED0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E689706-45B7-495E-BF4A-A3AC8BEE69DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E689706-45B7-495E-BF4A-A3AC8BEE69DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E689706-45B7-495E-BF4A-A3AC8BEE69DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E689706-45B7-495E-BF4A-A3AC8BEE69DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8467612-457E-4AE3-A671-6DF2E5CC81D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8467612-457E-4AE3-A671-6DF2E5CC81D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8467612-457E-4AE3-A671-6DF2E5CC81D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8467612-457E-4AE3-A671-6DF2E5CC81D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7306090-C350-45FF-B855-EDC2C38E6835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7306090-C350-45FF-B855-EDC2C38E6835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7306090-C350-45FF-B855-EDC2C38E6835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7306090-C350-45FF-B855-EDC2C38E6835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AFEB838-C6CF-4A05-85B4-49206A1C0811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFEB838-C6CF-4A05-85B4-49206A1C0811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFEB838-C6CF-4A05-85B4-49206A1C0811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFEB838-C6CF-4A05-85B4-49206A1C0811}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96BE0BAF-FD87-4825-97F3-41B39DED0F24} = {4471808B-4451-41CA-B909-C81B6B120809}
+		{4E689706-45B7-495E-BF4A-A3AC8BEE69DF} = {4471808B-4451-41CA-B909-C81B6B120809}
+		{D8467612-457E-4AE3-A671-6DF2E5CC81D4} = {229D55E0-24FB-4665-9E95-2832BF9D7117}
+		{E7306090-C350-45FF-B855-EDC2C38E6835} = {229D55E0-24FB-4665-9E95-2832BF9D7117}
+		{3AFEB838-C6CF-4A05-85B4-49206A1C0811} = {229D55E0-24FB-4665-9E95-2832BF9D7117}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D108CF04-FF5F-455B-87FC-59A8B5429F19}
+	EndGlobalSection
+EndGlobal
