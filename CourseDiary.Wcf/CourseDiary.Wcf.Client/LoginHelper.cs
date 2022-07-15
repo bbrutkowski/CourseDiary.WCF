@@ -1,5 +1,5 @@
-﻿using CourseDiary.Wcf.Client.Clients;
-using CourseDiary.Wcf.Models;
+﻿using CourseDiary.Wcf.Client.Managments;
+using CourseDiary.Wcf.ServiceDefinitions.Models;
 using System;
 
 namespace CourseDiary.Wcf.Client
@@ -46,6 +46,7 @@ namespace CourseDiary.Wcf.Client
             else if (correctCredentials == false)
             {
                 Console.WriteLine($"The user not found. Register new user");
+                //_userManager.AddUser();
                 LoginUser();
             }
 

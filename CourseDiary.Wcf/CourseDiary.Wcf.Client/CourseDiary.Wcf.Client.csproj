@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AFEB838-C6CF-4A05-85B4-49206A1C0811}</ProjectGuid>
+    <ProjectGuid>{3160BD76-CD43-4715-9C48-9EF7CEDC41A8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CourseDiary.Wcf.Client</RootNamespace>
     <AssemblyName>CourseDiary.Wcf.Client</AssemblyName>
@@ -44,13 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\CourseManagmentClient.cs" />
-    <Compile Include="Clients\StudentManagmentClient.cs" />
-    <Compile Include="Clients\TrainerManagmentClient.cs" />
-    <Compile Include="Clients\UserManagmentClient.cs" />
     <Compile Include="Interactions.cs" />
     <Compile Include="LoginHelper.cs" />
+    <Compile Include="Managments\CourseManagmentClient.cs" />
+    <Compile Include="Managments\StudentManagmentClient.cs" />
+    <Compile Include="Managments\TrainerManagmentClient.cs" />
+    <Compile Include="Managments\UserManagmentClient.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,9 +59,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CourseDiary.Wcf\CourseDiary.Wcf.ServiceDefinitions2.csproj">
-      <Project>{D8467612-457E-4AE3-A671-6DF2E5CC81D4}</Project>
-      <Name>CourseDiary.Wcf.ServiceDefinitions2</Name>
+    <ProjectReference Include="..\CourseDiary.Wcf.ServiceDefinitions\CourseDiary.Wcf.ServiceDefinitions.csproj">
+      <Project>{8380ED5A-E0DF-4E8C-921B-564CFE8EA630}</Project>
+      <Name>CourseDiary.Wcf.ServiceDefinitions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

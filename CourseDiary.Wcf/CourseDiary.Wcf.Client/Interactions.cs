@@ -28,6 +28,5 @@ namespace CourseDiary.Wcf.Client
 
             return result;
         }
-
     }
 }

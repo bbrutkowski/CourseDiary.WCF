@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7306090-C350-45FF-B855-EDC2C38E6835}</ProjectGuid>
+    <ProjectGuid>{50199CD7-100F-4BD7-9D6C-B70DC942F1DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CourseDiary.Wcf.SelfhostServer</RootNamespace>
     <AssemblyName>CourseDiary.Wcf.SelfhostServer</AssemblyName>
@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseDiaryServiceDefinitions.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -61,9 +61,9 @@
       <Project>{96BE0BAF-FD87-4825-97F3-41B39DED0F24}</Project>
       <Name>CourseDiary.Wcf.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CourseDiary.Wcf\CourseDiary.Wcf.ServiceDefinitions2.csproj">
-      <Project>{D8467612-457E-4AE3-A671-6DF2E5CC81D4}</Project>
-      <Name>CourseDiary.Wcf.ServiceDefinitions2</Name>
+    <ProjectReference Include="..\CourseDiary.Wcf.ServiceDefinitions\CourseDiary.Wcf.ServiceDefinitions.csproj">
+      <Project>{8380ED5A-E0DF-4E8C-921B-564CFE8EA630}</Project>
+      <Name>CourseDiary.Wcf.ServiceDefinitions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

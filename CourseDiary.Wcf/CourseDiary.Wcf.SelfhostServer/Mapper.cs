@@ -1,5 +1,6 @@
 ﻿using CourseDiary.Wcf.Domain.Models;
-using WcfUser = CourseDiary.Wcf.Models.User;
+using WcfUser = CourseDiary.Wcf.ServiceDefinitions.Models.User;
+
 
 namespace CourseDiary.Wcf.SelfhostServer
 {
@@ -9,7 +10,7 @@ namespace CourseDiary.Wcf.SelfhostServer
         {
             return new WcfUser()
             {
-                Name = user.Login,
+                Login = user.Login,
                 Password = user.Password,
                 Role = user.Role,
             };

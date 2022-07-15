@@ -1,10 +1,10 @@
-﻿using CourseDiary.Wcf.Interfaces;
-using CourseDiary.Wcf.Models;
+﻿using CourseDiary.Wcf.ServiceDefinitions.Interfaces;
+using CourseDiary.Wcf.ServiceDefinitions.Models;
 using System.ServiceModel;
 
-namespace CourseDiary.Wcf.Client.Clients
+namespace CourseDiary.Wcf.Client.Managments
 {
-    public class UserManagmentClient : ClientBase<IUserManagmentClient>
+    public class UserManagmentClient : ClientBase<IUserManagmentService>
     {
         public bool LoginUser(string userLogin, string userPassword)
         {
