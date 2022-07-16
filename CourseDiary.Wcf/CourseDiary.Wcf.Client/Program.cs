@@ -1,5 +1,8 @@
-﻿using CourseDiary.Wcf.ServiceDefinitions.Models;
+﻿using CourseDiary.Wcf.Client.Managments;
+using CourseDiary.Wcf.ServiceDefinitions.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CourseDiary.Wcf.Client
 {
@@ -9,12 +12,19 @@ namespace CourseDiary.Wcf.Client
         private User _loggedUser;
         private readonly Interactions _interactions;
         private readonly Menu _menu;
+        private readonly TrainerManagmentClient _trainerMenagmentClient;
+        private readonly StudentManagmentClient _studentManagmentClient;
+        private readonly CourseManagmentClient _courseManagmentClient;
         public Program()
         {
             _loginHelper = new LoginHelper();
             _loggedUser = new User();
             _interactions = new Interactions();
             _menu = new Menu();
+            _trainerMenagmentClient = new TrainerManagmentClient();
+            _studentManagmentClient = new StudentManagmentClient();
+            _courseManagmentClient = new CourseManagmentClient();
+
         }
         static void Main(string[] args)
         {
@@ -60,15 +70,58 @@ namespace CourseDiary.Wcf.Client
 
         private void RegisterMenuCommands()
         {
-            //_menu.Register(1, new MenuItem { Action = _userManager.AddUser, Name = "Add new user", Description = "Adding a new user with guest or administrator attributes" });
-            //_menu.Register(2, new MenuItem { Action = _userManager.DeleteUser, Name = "Delete user", Description = "Removing a user" });
-            //_menu.Register(3, new MenuItem { Action = _powerPlantManager.InitTimer, Name = "Show work of power plants", Description = "Displays the work of power plants" });
-            //_menu.Register(4, new MenuItem { Action = _anomalies.GetAnomalies, Name = "Retrieving information about anomaly", Description = "Displays all anomalies at the time specified by user" });
-            //_menu.Register(5, new MenuItem { Action = _anomalies.AnomalyStatistics, Name = "View anomaly statistics", Description = "Displays anomaly statistics for a given user specified of time" });
-            //_menu.Register(6, new MenuItem { Action = _inspections.AddNewInspection, Name = "Adding device inspection", Description = "Allows you to add new inspection" });
-            //_menu.Register(7, new MenuItem { Action = _inspections.GetAllInspections, Name = "Download all inspections", Description = "Gets information about all planned inspections" });
-            //_menu.Register(8, new MenuItem { Action = _inspections.UpdateInspection, Name = "Assign engineer to inspection", Description = "Assigns a logged engineer to selected inspection" });
-            //_menu.Register(9, new MenuItem { Action = _inspections.GettAllEngineerInspections, Name = "View inspections for assigned engineers", Description = "Displays all inspections with assigned engineers" });
+            _menu.Register(1, new MenuItem { Action = AddTrainer, Name = "Add new trainer", Description = "Adding a new trainer to the system" });
+            _menu.Register(2, new MenuItem { Action = AddStudent, Name = "Add new student", Description = "Adding a new student to the system" });
+            _menu.Register(3, new MenuItem { Action = AddCourse, Name = "Add new course", Description = "Adding a new course to system" });         
+        }
+
+        private async void AddCourse()
+        {
+            List<Trainer> trainers = await _trainerMenagmentClient.GetAllTrainersAsync();
+            List<Student> students = await _studentManagmentClient.GetAllStudentsAsync();
+            Course newCourse = new Course();
+            newCourse.Name = _interactions.GetInfoFromUser("Course name: ");
+            newCourse.BeginDate = _interactions.GetDateFromUser("Begin date(dd/mm/yyyy): ");
+            foreach (var trainer in trainers)
+            {
+                Console.WriteLine($"{trainer.Id}. {trainer.Name} {trainer.Surname} - {trainer.Email}");
+            }
+            newCourse.Trainer = trainers.Where(x => x.Id == _interactions.GetIntFromUser("Choose id of trainer: ")).ToList()[0];
+            foreach (var student in students)
+            {
+                Console.WriteLine($"{student.Id}. {student.Name} {student.Surname} - {student.Email}");
+            }
+            var idList = _interactions.GetStudentIds();
+            newCourse.Students = students.Where(x => idList.Contains(x.Id)).ToList();
+
+            await _courseManagmentClient.AddCourseAsync(newCourse);
+
+        }
+
+        private async void AddStudent()
+        {
+            Student newStudent = new Student()
+            {
+                Name = _interactions.GetInfoFromUser("Enter students name"),
+                Surname = _interactions.GetInfoFromUser("Enter trainers surname"),
+                Email = _interactions.GetInfoFromUser("Select trainers email"),
+                Password = _interactions.GetInfoFromUser("Enter trainer password. Min 6 signs"),
+                BirthDate = DateTime.Parse(_interactions.GetInfoFromUser("Enter date of birth")),
+            };
+            await _studentManagmentClient.AddStudentAsync(newStudent);
+        }
+
+        private async void AddTrainer()
+        {
+            Trainer newTrainer = new Trainer()
+            { 
+                Name = _interactions.GetInfoFromUser("Enter trainers name"),
+                Surname = _interactions.GetInfoFromUser("Enter trainers surname"),
+                Email = _interactions.GetInfoFromUser("Select trainers email"),
+                Password = _interactions.GetInfoFromUser("Enter trainer password. Min 6 signs"),
+                DateOfBirth = DateTime.Parse(_interactions.GetInfoFromUser("Enter date of birth")),
+            };
+            await _trainerMenagmentClient.AddTrainerAsync(newTrainer);
         }
     }
 }

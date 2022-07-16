@@ -24,7 +24,7 @@ namespace CourseDiary.Wcf.Infrastructure
                     string commandText = $"SELECT * FROM [Users] WHERE [Login] = @Login";
 
                     SqlCommand command = new SqlCommand(commandText, connection);
-                    command.Parameters.Add("@UserLogin", SqlDbType.NVarChar, 255).Value = userLogin;
+                    command.Parameters.Add("@Login", SqlDbType.NVarChar, 255).Value = userLogin;
 
                     SqlDataReader dataReader = command.ExecuteReader();
 
