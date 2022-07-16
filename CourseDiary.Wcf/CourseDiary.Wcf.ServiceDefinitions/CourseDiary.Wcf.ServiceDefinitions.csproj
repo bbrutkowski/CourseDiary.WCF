@@ -44,6 +44,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICourseManagmentService.cs" />
+    <Compile Include="Interfaces\IStudentManagmentService.cs" />
+    <Compile Include="Interfaces\ITrainerManagmentService.cs" />
     <Compile Include="Interfaces\IUserManagmentService.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Student.cs" />

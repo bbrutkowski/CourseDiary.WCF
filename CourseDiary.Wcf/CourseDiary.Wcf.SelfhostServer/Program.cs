@@ -18,9 +18,9 @@ namespace CourseDiary.Wcf.SelfhostServer
             //Add a service endpoint
             var binding = new WSHttpBinding();
             host.AddServiceEndpoint(typeof(IUserManagmentService), binding, "Users");
-            //host.AddServiceEndpoint(typeof(IAnomalyManagmentService), binding, "Trainer");
-            //host.AddServiceEndpoint(typeof(IInspectionManagmentService), binding, "Student");
-           // host.AddServiceEndpoint(typeof(IPowerPlantManagmentService), binding, "Course");
+            host.AddServiceEndpoint(typeof(ITrainerManagmentService), binding, "Trainer");
+            host.AddServiceEndpoint(typeof(IStudentManagmentService), binding, "Student");
+            host.AddServiceEndpoint(typeof(ICourseManagmentService), binding, "Course");
             //Enable metadata exchange
             var smb = new ServiceMetadataBehavior();
             smb.HttpGetEnabled = true;

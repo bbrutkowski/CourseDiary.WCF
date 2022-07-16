@@ -13,5 +13,11 @@ namespace CourseDiary.Wcf.Domain.Models
         public double PresenceTreshold = 70.0;
         public double HomeworkTreshold = 70.0;
         public double TestTreshold = 70.0;
+        public State State;
+    }
+    public enum State
+    {
+        Open,
+        Closed
     }
 }
